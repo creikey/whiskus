@@ -1,0 +1,20 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Copyright free Sound Effect Weather - Desert Howling Wind royalty free royalty free-ZCR35f9E_-A.wav-e705b30683608eebe7d85cf66d089360.sample"
+
+[deps]
+
+source_md5="3949a0ff901f45b45d6e29f888a6844c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
