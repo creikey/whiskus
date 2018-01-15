@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/piano_bg.wav-9415da6448fa4a526cbff94c5ea331d0.sample"
+
+[deps]
+
+source_file="res://title_screen/ambience/piano_bg.wav"
+source_md5="fb89852273ebb8276b2e783b9a214d72"
+
+dest_files=[ "res://.import/piano_bg.wav-9415da6448fa4a526cbff94c5ea331d0.sample" ]
+dest_md5="75b64f2890a53d285817ed029ad4a953"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

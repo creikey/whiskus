@@ -1,9 +1,35 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+[gd_resource type="AudioBusLayout" load_steps=5 format=2]
 
 [sub_resource type="AudioEffectPanner" id=1]
 
 resource_name = "Panner"
 pan = 0.31
+
+[sub_resource type="AudioEffectPhaser" id=3]
+
+resource_name = "Phaser"
+range_min_hz = 440.0
+range_max_hz = 1600.0
+rate_hz = 0.5
+feedback = 0.7
+depth = 1.0
+
+[sub_resource type="AudioEffectPanner" id=4]
+
+resource_name = "Panner"
+pan = 0.16
+
+[sub_resource type="AudioEffectReverb" id=6]
+
+resource_name = "Reverb"
+predelay_msec = 150.0
+predelay_feedback = 150.0
+room_size = 0.8
+damping = 0.5
+spread = 1.0
+hipass = 0.0
+dry = 1.0
+wet = 0.5
 
 [resource]
 
@@ -11,8 +37,20 @@ bus/0/name = "Master"
 bus/0/solo = false
 bus/0/mute = false
 bus/0/bypass_fx = false
-bus/0/volume_db = 16.6
+bus/0/volume_db = 0.8
 bus/0/send = ""
 bus/0/effect/0/effect = SubResource( 1 )
 bus/0/effect/0/enabled = true
+bus/1/name = "piano"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -12.2
+bus/1/send = "Master"
+bus/1/effect/0/effect = SubResource( 3 )
+bus/1/effect/0/enabled = false
+bus/1/effect/1/effect = SubResource( 4 )
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource( 6 )
+bus/1/effect/2/enabled = true
 

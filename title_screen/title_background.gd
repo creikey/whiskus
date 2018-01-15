@@ -15,14 +15,14 @@ func _ready():
 	hour = OS.get_datetime()["hour"]
 	print("Current hour is: ", hour)
 	# Nighttime
-	if hour > 18:
+	if hour > 17:
 		#var cur_stars = stars.instance()
 		#add_child(cur_stars)
 		make_stars()
 		bg_color=Color(30.0/255,43.0/255,88.0/255)
 	# Midday
 	elif hour > 10 :
-		bg_color=Colors(226.0/255,215.0/255,127.0/255)
+		bg_color=Color(226.0/255,215.0/255,127.0/255)
 	# Early morning
 	else:
 		#var cur_stars = stars.instance()
