@@ -1,11 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://title_screen/title_background.gd" type="Script" id=1]
 [ext_resource path="res://title_screen/stars.tscn" type="PackedScene" id=2]
 [ext_resource path="res://title_screen/ambience/desert_wind.wav" type="AudioStream" id=3]
 [ext_resource path="res://title_screen/ambience/piano_bg.wav" type="AudioStream" id=4]
+[ext_resource path="res://title_screen/DIOGENES.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://title_screen/Center_Title.gd" type="Script" id=6]
+[ext_resource path="res://title_screen/Sand_dunes.tscn" type="PackedScene" id=7]
 
-[node name="title_screen" type="Node2D" index="0"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 150
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="title_screen" type="Node2D"]
 
 [node name="background" type="ColorRect" parent="." index="0"]
 
@@ -43,5 +54,37 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "piano"
 area_mask = 1
+
+[node name="Title" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 960.0
+margin_top = 363.0
+margin_right = 1071.0
+margin_bottom = 737.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Whiskus
+"
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Margin", "custom_colors", "custom_fonts" ]
+
+[node name="Sand_dunes" parent="." index="4" instance=ExtResource( 7 )]
+
+dune_height_range = [ 200.0, 400.0 ]
+dune_length_range = [ 0.0, 1000.0 ]
+dune_cycle_range = [ 150.0, 300.0 ]
 
 
