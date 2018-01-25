@@ -1,3 +1,6 @@
+# Merge files
+*.orig
+# Godot imports
 .import/
 .fscache
 *~
