@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://title_screen/orbit.gd" type="Script" id=1]
+[ext_resource path="res://title_screen/draw_orbitor.gd" type="Script" id=2]
+[ext_resource path="res://title_screen/draw_path.gd" type="Script" id=3]
+
+[node name="orbiter" type="KinematicBody2D" index="0"]
+
+position = Vector2( 960, 540 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "collision" ]
+rotate_radius = 100.0
+rotate_step = 1.0
+draw_line = true
+planet_radius = 30.0
+planet_color = Color( 0, 0, 0, 1 )
+dotted_outline_color = Color( 0, 0, 0, 1 )
+dotted_outline_resolution = 5.0
+dots_thickness = 1.0
+anti_alias = false
+segments_length = 10.0
+segments_on = 1
+segments_off = 50
+
+[node name="draw_orbitor" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 2 )
+
+[node name="draw_path" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 3 )
+
+
