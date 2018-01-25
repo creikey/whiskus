@@ -40,7 +40,7 @@ func _draw():
 		cur_dune_amplitude = rand_range(dune_height_range[0], dune_height_range[1])
 		cur_dune_cycle = rand_range(dune_cycle_range[0], dune_cycle_range[1])
 		curcur=0
-		while(curcur < cur_dune_cycle*2):
+		while(curcur < cur_dune_cycle*2*PI):
 			var to_append = Vector2(cur, sin(cur/(cur_dune_cycle/PI)) * cur_dune_amplitude)
 			dunelines.append(to_append)
 			# print(to_append)
