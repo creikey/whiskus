@@ -25,12 +25,11 @@ var orbit_circumference = 2*PI*rotate_radius
 var orbit_step_max = orbit_circumference/rotate_step
 var cur = 0.0
 
-onready var orbit_path = get_node("draw_path")
+onready var orbit_path = get_parent()
 onready var orbit_draw = get_node("draw_orbitor")
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	# The outline
 	orbit_path.outline_color = dotted_outline_color
 	orbit_path.resolution = dotted_outline_resolution
 	orbit_path.thickness = dots_thickness
@@ -38,10 +37,11 @@ func _ready():
 	orbit_path.segment_length = segments_length
 	orbit_path.segments_on = segments_on
 	orbit_path.segments_off = segments_off
+	orbit_path.radius = rotate_radius
+	#The planet
 	orbit_draw.planet_radius = planet_radius
 	orbit_draw.planet_color = planet_color
 	if(draw_line):
-		orbit_path.set_radius(rotate_radius)
 		orbit_path.set_visible(true)
 		orbit_path.update()
 	rotate_point=get_position()

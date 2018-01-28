@@ -26,6 +26,7 @@ func _init():
 	set_visible(false)
 
 func _ready():
+	set_visible(true)
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
@@ -52,22 +53,13 @@ func _draw():
 	# draw_polygon(rasterized, [Color()])
 	var cur = 0.0
 	var cur_segments
-	while( cur < circumference ):
-		# print(floor(cur/real_segments_length))
-		cur_segments = floor(cur/real_segments_length)
-		while(1):
+	while(cur < 2*PI):
+		for x in range(0, segments_on):
 			draw_line(Vector2(sin(cur)*radius, cos(cur)*radius), Vector2(sin(cur+real_step)*radius, cos(cur+real_step)*radius), outline_color )
 			cur += real_step
-			if( floor(cur/real_segments_length) - cur_segments >= segments_on ):
-				break;
-		cur_segments = floor(cur/real_segments_length)
-		while(1):
-			# draw_line(Vector2(sin(cur)*radius, cos(cur)*radius), Vector2(sin(cur+real_step)*radius, cos(cur+real_step)*radius), outline_color )
+		for x in range(0, segments_off):
 			cur += real_step
-			print(floor(cur/real_segments_length) - cur_segments)
-			print(segments_off)
-			if( floor(cur/real_segments_length) - cur_segments >= segments_off ):
-				break;
+		pass
 
 func set_radius(inr):
 	radius = inr 

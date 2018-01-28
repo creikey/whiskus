@@ -60,14 +60,9 @@ _sections_unfolded = [ "Animation", "Transform", "Z" ]
 
 [node name="orbiter" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 960, 540 )
-_sections_unfolded = [ "Transform", "collision" ]
 planet_color = Color( 1, 1, 1, 1 )
 dotted_outline_color = Color( 1, 1, 1, 1 )
 dots_thickness = 3.0
 anti_alias = true
-segments_length = 10.0
-segments_on = 1
-segments_off = 1
 
 
