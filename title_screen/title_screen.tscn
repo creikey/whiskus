@@ -64,5 +64,6 @@ planet_color = Color( 1, 1, 1, 1 )
 dotted_outline_color = Color( 1, 1, 1, 1 )
 dots_thickness = 3.0
 anti_alias = true
+rotation_speed = 0.0
 
 

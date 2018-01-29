@@ -15,7 +15,10 @@ var anti_alias = false
 var segment_length = 10.0
 var segments_off = 1
 var segments_on = 1
+var rot_speed = 0.0
 
+var rotpos = 0.0
+var starting_cur = 0.0
 var radius = 50.0
 var circumference = 2*PI*radius
 var real_step = (resolution/circumference)*(2*PI)
@@ -29,7 +32,13 @@ func _ready():
 	set_visible(true)
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	set_process(true)
+
+func _process(delta):
+	#starting_cur -= 0.005
+	#update()
+	rotpos += rot_speed
+	set_rotation(rotpos)
 
 func _draw():
 	#var rasterized = PoolVector2Array()
@@ -51,11 +60,11 @@ func _draw():
 		#cur -= real_step
 	# draw_polyline(rasterized, outline_color, thickness, anti_alias)
 	# draw_polygon(rasterized, [Color()])
-	var cur = 0.0
+	var cur = starting_cur
 	var cur_segments
-	while(cur < 2*PI):
+	while(cur < 2*PI+starting_cur):   
 		for x in range(0, segments_on):
-			draw_line(Vector2(sin(cur)*radius, cos(cur)*radius), Vector2(sin(cur+real_step)*radius, cos(cur+real_step)*radius), outline_color )
+			draw_line(Vector2(sin(cur)*radius, cos(cur)*radius), Vector2(sin(cur+real_step)*radius, cos(cur+real_step)*radius), outline_color, thickness, anti_alias )
 			cur += real_step
 		for x in range(0, segments_off):
 			cur += real_step

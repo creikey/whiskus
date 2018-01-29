@@ -4,44 +4,51 @@
 [ext_resource path="res://title_screen/orbit.gd" type="Script" id=2]
 [ext_resource path="res://title_screen/draw_orbitor.gd" type="Script" id=3]
 
-[node name="draw_path" type="Control" index="0"]
+[node name="orbiter" type="Node2D" index="0"]
+
+position = Vector2( 1027.94, 595.261 )
+_sections_unfolded = [ "Rect", "Transform", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="orbit_path" type="Control" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 960.0
-margin_top = 540.0
-margin_right = 961.0
-margin_bottom = 541.0
+margin_right = 40.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect", "Transform", "collision" ]
 
-[node name="orbiter" type="KinematicBody2D" parent="." index="0"]
+[node name="orbiter_movement" type="KinematicBody2D" parent="." index="1"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 rotate_radius = 100.0
 rotate_step = 1.0
 draw_line = false
 planet_radius = 30.0
 planet_color = Color( 0, 0, 0, 1 )
-dotted_outline_color = Color( 0, 0, 0, 1 )
-dotted_outline_resolution = 5.0
-dots_thickness = 1.0
-anti_alias = false
+dotted_outline_color = Color( 1, 1, 1, 1 )
+dotted_outline_resolution = 30.0
+dots_thickness = 3.0
+anti_alias = true
 segments_length = 10.0
 segments_on = 1
 segments_off = 1
+rotation_speed = 0.01
 
-[node name="draw_orbitor" type="Control" parent="orbiter" index="0"]
+[node name="draw_orbitor" type="Control" parent="orbiter_movement" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

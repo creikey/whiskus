@@ -19,13 +19,14 @@ export var anti_alias = false
 export var segments_length = 10.0
 export var segments_on = 1
 export var segments_off = 1
+export var rotation_speed = 0.0
 
 var rotate_point = Vector2()
 var orbit_circumference = 2*PI*rotate_radius
 var orbit_step_max = orbit_circumference/rotate_step
 var cur = 0.0
 
-onready var orbit_path = get_parent()
+onready var orbit_path = get_node("../orbit_path")
 onready var orbit_draw = get_node("draw_orbitor")
 
 func _ready():
@@ -38,6 +39,7 @@ func _ready():
 	orbit_path.segments_on = segments_on
 	orbit_path.segments_off = segments_off
 	orbit_path.radius = rotate_radius
+	orbit_path.rot_speed = rotation_speed
 	#The planet
 	orbit_draw.planet_radius = planet_radius
 	orbit_draw.planet_color = planet_color
